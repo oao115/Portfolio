@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Illustration</title>
+    <!--CSS--><!--超連結取消底線-->
+    <style>
+        
+    /* 全局樣式，設置您想要的背景圖片和 70% 透明度的覆蓋層 */
+    body {
+        /* 將您想要的背景圖片 URL 放在這裡 */
+        background-image: url('202412222.png'); 
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        /* 設置定位基準點 */
+        position: relative; 
+        min-height: 100vh; /* 確保背景覆蓋整個視窗高度 */
+        margin: 0; /* 移除 body 預設邊距 */
+        padding: 0; 
+        font-family: sans-serif;
+        background-color: #d6ccc2; /* 當圖片載入失敗時的備用背景色 */
+    }
+
+    /* 創建一個半透明的覆蓋層 */
+    body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 50;
+        /* 設置半透明顏色：白色 with 70% opacity (0.7) */
+        background-color: rgba(255, 255, 255, 0.2); 
+        /* 將這個覆蓋層放在內容下方 */
+        z-index: -1; 
+    }
+        
+    /* 確保所有內容（如標題、連結、圖片）層級較高，顯示在半透明層上方 */
+    h1, h2, div, a, p, marquee, .gallery-container {
+        position: relative;
+        z-index: 1;
+    }
+
+
+    h {color:#526347}
+    a{text-decoration:none}
+    a:hover{text-decoration:none}
+    
+    /* 移除您原來的 .background-container 樣式，因為已經用 body::before 取代 */
+    /* 您原有的其他樣式... */
+
+
+/* 橫幅樣式 */
+.parent {
+  position: relative;
+  width: 100%; 
+  height: 360px;
+  border: 2px solid rgb(255, 255, 255);
+  background-image: url('20240918_163156.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 80px; /* 增加下方邊距，避免與下面的內容重疊 */
+}
+
+.absolute-box {
+  background-color: rgba(255, 255, 255, 0.7); /* 使用 rgba 設定透明度 */
+  position: absolute;
+  top: 100%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  width: 350px;
+  height: 220px;
+  padding: 10px;
+  border:2px solid rgb(255, 255, 255)
+}
+        
+        /* 圖片容器的樣式 */
+        .gallery-container {
+            display: flex; /* 使用 Flexbox */
+            flex-wrap: wrap; /* 允許圖片換行 */
+            gap: 10px; /* 圖片之間的間距 */
+            justify-content: center; /* 圖片在容器中居中對齊 */
+            background-color: rgba(255, 255, 255, 0.8); /* 讓相簿區域本身也有一點透明度 */
+            padding: 60px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .gallery-container img {
+            max-width: 72%; 
+            height: 660px; 
+            border: 2px solid #ddd;
+            padding: 5px;
+            background-color: #fff;
+            flex-basis: 300px; 
+            object-fit: cover; 
+            cursor: pointer; /* 讓圖片看起來可以點擊 */
+            /* 加入平滑過渡效果 */
+            transition: transform 0.3s ease;
+        }
+        .gallery-container img:hover {
+            transform: scale(1.05); /* 鼠標懸停時放大圖片 */
+        }
+        
+        h2 {
+            background: #9cb7d5;
+            padding: 15px;
+            color: white;
+            text-align: center;
+        }
+
+        /* Lightbox 燈箱相關樣式 */
+        .lightbox {
+          /* 預設隱藏 */
+          display: none; 
+          /* 覆蓋整個螢幕 */
+          position: fixed; 
+          z-index: 100; /* 確保在所有內容之上 */
+          padding-top: 50px; /* 從頂部稍微往下 */
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          overflow: auto; /* 允許滾動 */
+          background-color: rgba(0, 0, 0, 0.9); /* 黑色背景透明度 90% */
+        }
+
+        /* 燈箱中的圖片 */
+        .lightbox-content {
+          margin: auto;
+          display: block;
+          max-width: 90%;
+          max-height: 90vh; /* 限制圖片高度以適應視窗 */
+          /* CSS 動畫：從上方滑入 */
+          animation-name: zoom;
+          animation-duration: 0.6s;
+        }
+
+        /* 關閉按鈕樣式 */
+        .close-btn {
+          position: absolute;
+          top: 15px;
+          right: 35px;
+          color: #f1f1f1;
+          font-size: 40px;
+          font-weight: bold;
+          cursor: pointer;
+          transition: 0.3s;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+          color: #bbb;
+          text-decoration: none;
+          cursor: pointer;
+        }
+
+        /* 動畫效果 (Zoom In) */
+        @keyframes zoom {
+          from {transform: scale(0.1)} 
+          to {transform: scale(1)}
+        }
+
+    </style>
+</head>
+
+<body>
+<!--標題-->
+<h1 style="font-size: 60px; color:#305792; text-align: center;">Work</h1>
+<!--連結頁面-->
+<div style="text-align: center; ">
+    <a href="index.html" style="color: #073436; font-size: 18px; letter-spacing: 1px;">&nbsp首頁&nbsp</a>
+    <a href="about.html" style="color: #073436; font-size: 18px; letter-spacing: 1px;">&nbsp關於&nbsp</a>
+    <a href="Illustration.html" style="color: #2974a2; font-size: 18px; letter-spacing: 1px;">&nbsp插畫作品&nbsp</a>
+    <a href="video.html" style="color: #073436; font-size: 18px; letter-spacing: 1px;">&nbsp影片作品&nbsp</a>
+    <a href="contact.html" style="color: #073436; font-size: 18px; letter-spacing: 1px;">&nbsp聯絡方式&nbsp</a>
+</div>
+<hr>
+
+<!--橫幅-->
+<div class="parent">
+  <div class="absolute-box">
+    <!-- 新增文字內容 -->
+     <br><br><br>
+    <p style="color: #2f4f6d; text-align: center; font-size: 40px; font-weight: bold; ">Illustration</p><br>
+  </div>
+</div>
+
+<div style="background-color: rgb(255, 255, 255,); width: 140px; height: 80px; "></div>
+
+<!--<marquee direction="right" height="30" scrollamount="5" behavior="alternate" style="color: #20405e;"> ヾ(´︶`*)ﾉ♬ヾ(´︶`*)ﾉ♬ヾ(´︶`*)ﾉ♬</marquee>-->
+
+<h2 style="background: rgba(29, 58, 102, 0.9)	;"></h2>
+<div class="gallery-container">
+         <!-- 重要: src放縮圖, data-src放欲放大顯示的大圖 -->
+         <img src="202409072.png" data-src="202409072.png" alt="car">
+         <img src="20241222.png" data-src="20241222.png" alt="car">
+         <img src="20240904.png" data-src="20240904.png" alt="car">
+         <img src="202409042.png" data-src="202409042.png" alt="car">
+         <img src="20240918_163156.png" data-src="20240918_163156.png" alt="car">
+         <img src="98912495_p0_master1200.jpg" data-src="98912495_p0_master1200.jpg" alt="car">
+</div>
+<h2 style="background: rgba(29, 58, 102, 0.9);"></h2>
+<div class="gallery-container">
+         <!-- 重要: src放縮圖, data-src放欲放大顯示的大圖 -->
+         <img src="20240830a.png" data-src="20240830a.png" alt="car">
+         <img src="20240214.png" data-src="20240214.png" alt="car">
+         <img src="20250119.png" data-src="20250119.png" alt="car">
+</div>
+
+<!-- Lightbox 燈箱容器 HTML 結構 -->
+<div id="lightbox" class="lightbox">
+    <!-- 使用 onclick="closeLightbox()" 是另一種關閉方式，更簡潔 -->
+    <span class="close-btn" onclick="closeLightbox()">&times;</span>
+    <img class="lightbox-content" id="img-enlarged">
+    <!-- 圖片描述可選 -->
+    <div id="caption"></div>
+</div>
+
+
+<!-- JavaScript 邏輯 -->
+<script>
+    // 獲取燈箱元素
+    const lightbox = document.getElementById("lightbox");
+    // 獲取顯示大圖的 img 元素
+    const imgEnlarged = document.getElementById("img-enlarged");
+    
+    // 獲取所有相簿中的圖片
+    const galleryImages = document.querySelectorAll(".gallery-container img");
+
+    // 為每張圖片添加點擊事件監聽器
+    galleryImages.forEach(image => {
+        image.addEventListener("click", function() {
+            // 顯示燈箱
+            lightbox.style.display = "block";
+            // 將大圖的路徑設定給燈箱圖片 (使用 data-src 屬性)
+            imgEnlarged.src = this.getAttribute("data-src");
+        });
+    });
+
+    // 關閉燈箱的函式 (由 HTML 中的 onclick="closeLightbox()" 調用)
+    function closeLightbox() {
+        lightbox.style.display = "none";
+    }
+
+    // 點擊燈箱背景時關閉
+    lightbox.addEventListener("click", function(event) {
+        // 確保點擊的目標是 lightbox 容器本身，而不是裡面的圖片
+        if (event.target === lightbox) {
+            closeLightbox();
+        }
+    });
+</script>
+
+</body>
+</html>

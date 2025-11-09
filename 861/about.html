@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title> Page</title>
+    <!--CSS--><!--超連結取消底線-->
+    <style>
+         body {
+            /* 設定背景圖片的路徑 */
+            background-image: url("20240918_163156.png"); 
+            /* 防止背景圖片重複 */
+            background-repeat: no-repeat; 
+            /* 讓背景圖片完全覆蓋整個視窗 */
+            background-size: cover; 
+            /* 讓背景圖片置中 */
+            background-position: center; 
+            position: relative; 
+        min-height: 100vh; /* 確保背景覆蓋整個視窗高度 */
+        margin: 0; /* 移除 body 預設邊距 */
+        padding: 0; 
+        font-family: sans-serif;
+        background-color: #d6ccc2; /* 當圖片載入失敗時的備用背景色 */
+    }
+        /* 創建一個半透明的覆蓋層 */
+    body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        /* 設置半透明顏色：白色 with 70% opacity (0.7) */
+        background-color: rgba(255, 255, 255, 0.7); 
+        /* 將這個覆蓋層放在內容下方 */
+        z-index: -1; 
+    }
+       /* 確保所有內容（如標題、連結、圖片）層級較高，顯示在半透明層上方 */
+    h1, h2, div, a, p, marquee, .gallery-container {
+        position: relative;
+        z-index: 1;
+    }
+    h {color:#526347}
+    a{text-decoration:none}
+    a:hover{text-decoration:none}
+            body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h2 {
+            background: #9cb7d5;
+            padding: 15px;
+            color: white;
+            text-align: center;
+        }
+
+        /* 圖片容器的樣式 */
+        .gallery-container {
+            display: flex; /* 使用 Flexbox */
+            flex-wrap: wrap; /* 允許圖片換行 */
+            gap: 10px; /* 圖片之間的間距 */
+            justify-content: center; /* 圖片在容器中居中對齊 */
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .gallery-container img {
+            /* 讓圖片具有響應式設計，最大寬度 100% */
+            max-width: 100%; 
+            height: auto; 
+            border: 2px solid #ddd;
+            padding: 5px;
+            background-color: #fff;
+            /* 定義一個基礎寬度，讓較小的圖片可以並排 */
+            flex-basis: 300px; 
+            object-fit: cover; /* 確保圖片填滿空間且不變形 */
+        }
+
+
+
+  /* 🔹 名片外框 */
+  .card {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    background: rgba(255, 255, 255, 0);
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0);
+
+    padding: 40px 20px;
+    display: flex;
+    align-items: center;
+    height: 160px; /* 🔹 增加高度 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* 🔹 左側圖片 */
+  .card img {
+    position: absolute;
+    top: 115%;
+    left: 28%;
+    transform: translateY(-50%);
+    width: 30%;
+    max-width: 450px;
+    height: auto;
+  }
+
+  /* 🔹 右側文字內容 */
+  .info {
+    margin-left: 65%;
+    position: absolute;
+    top: 100%;
+    transform: translateY(-50%);
+  }
+
+  .info h1 {
+    margin: 0;
+    font-size: 3vw;
+    color: #111d2c;
+  }
+
+  .info p {
+    margin: 10px 0;
+    font-size: 1.2vw;
+    color: #676b77;
+  }
+
+  /* 🔹 手機版響應式設計 */
+  @media (max-width: 768px) {
+    .card {
+      flex-direction: column;
+      text-align: center;
+      height: auto;
+    }
+
+    .card img {
+      position: static;
+      transform: none;
+      width: 50%;
+      margin: 0 auto 20px auto;
+      display: block;
+    }
+
+    .info {
+      margin: 0;
+    }
+
+    .info h1 {
+      font-size: 6vw;
+    }
+
+    .info p {
+      font-size: 3.5vw;
+    }
+    
+    .icons {
+      justify-content: center;   /* 手機置中對齊 */
+      gap: 20px;
+    }
+
+    .icons a img {
+      width: 70px;
+      height: 70px;
+    }
+  }
+    /* 🩵 社群圖示 */
+  .icons {
+    margin-top: 15px;
+    
+    display: flex;               /* 啟用 flex 排版 */
+    align-items: center;
+    gap: 65px;                   /* 每個圖示之間的距離 */
+    flex-wrap: wrap;             /* 若畫面太窄自動換行 */
+  }
+
+  .icons a img {
+    width: 50px;   /* 根據需要可調整大小 */
+    height: 50px;
+    margin-right: 20px;
+    vertical-align: middle;
+    transition: transform 0.2s ease;
+  }
+
+  .icons a img:hover {
+    transform: scale(1.1);
+  }
+        /* CSS 樣式結束 */
+    </style>
+</head>
+
+<body style="background:	d6ccc2">
+<!--標題-->
+<h1 style="font-size: 60px; color:#305792; text-align: center;">About</h1>
+
+<!--連結頁面-->
+
+<div style="text-align: center; ">
+    <a href="index.html" style="color: #073436; font-size: 18px; letter-spacing: 1px;">&nbsp首頁&nbsp</a>
+    <a href="about.html" style="color: #2974a2; font-size: 18px; letter-spacing: 1px;">&nbsp關於&nbsp</a>
+    <a href="Illustration.html" style="color: #073436; font-size: 18px; letter-spacing: 1px;">&nbsp插畫作品&nbsp</a>
+    <a href="video.html" style="color: #073436; font-size: 18px; letter-spacing: 1px;">&nbsp影片作品&nbsp</a>
+    <a href="contact.html" style="color: #073436; font-size: 18px; letter-spacing: 1px;">&nbsp聯絡方式&nbsp</a>
+</div>
+<hr>
+<br><br><br>
+
+
+
+  <div class="card">
+    <img src="removebg-preview.png" alt="個人照片">
+    <div class="info">
+      <h1 style="color: #203247;;">陳虹均</h1>
+      <p style="color: #3e4857;">｜naruru404@gmail.com</p>
+<br>
+      <div class="icons">
+        <a href="https://www.facebook.com/share/1A9tyFSadd/" target="_blank">
+          <img src="facebook-brands-solid-full.svg" alt="Facebook">
+        </a>
+        <a href="https://x.com/NARUru_404" target="_blank">
+          <img src="twitter-brands-solid-full.svg" alt="X (Twitter)">
+        </a>
+        <a href="https://www.pixiv.net/users/81401898" target="_blank">
+          <img src="pixiv-brands-solid-full.svg" alt="Pixiv">
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+<!--
+<pre style="font-size: 15px;text-align: center;border:2px solid #7c8692; background-color: rgba(255, 255, 255, 0.5);">
+    <br>
+    My Bonnie lies over the ocean.
+    My Bonnie lies over the sea.
+    My Bonnie lies over the ocean.
+    Oh, bring back my Bonnie to me.
+    <br>
+</pre>
+-->
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<center>
+<!--嵌入地圖-->
+<h1 style="font-size: 20px; color: #ffffff; background-color: #94a5be;">就讀學校</h1>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29375.498544768412!2d120.23889919999999!3d23.0260736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e7747c27fc4c5%3A0x8f336b40888d840!2z5Y-w5Y2X5oeJ55So56eR5oqA5aSn5a24!5e0!3m2!1szh-TW!2stw!4v1759817954963!5m2!1szh-TW!2stw" width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+</center>
+</pre>
+
+</body>
+
+</html>

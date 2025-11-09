@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title> Page</title>
+    <!--CSS--><!--超連結取消底線-->
+    <style>
+    h {color:#526347}
+    a{text-decoration:none}
+    a:hover{text-decoration:none}
+    </style>
+        <style>
+        body {
+            /* 設定背景圖片的路徑 */
+            background-image: url("20240918_163156.png"); 
+            /* 防止背景圖片重複 */
+            background-repeat: no-repeat; 
+            /* 讓背景圖片完全覆蓋整個視窗 */
+            background-size: cover; 
+            /* 讓背景圖片置中 */
+            background-position: center; 
+            position: relative; 
+        min-height: 100vh; /* 確保背景覆蓋整個視窗高度 */
+        margin: 0; /* 移除 body 預設邊距 */
+        padding: 0; 
+        font-family: sans-serif;
+        background-color: #d6ccc2; /* 當圖片載入失敗時的備用背景色 */
+    }
+        /* 創建一個半透明的覆蓋層 */
+    body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        /* 設置半透明顏色：白色 with 70% opacity (0.7) */
+        background-color: rgba(255, 255, 255, 0.7); 
+        /* 將這個覆蓋層放在內容下方 */
+        z-index: -1; 
+    }
+       /* 確保所有內容（如標題、連結、圖片）層級較高，顯示在半透明層上方 */
+    h1, h2, div, a, p, marquee, .gallery-container {
+        position: relative;
+        z-index: 1;
+    }
+                body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h2 {
+            background: #9cb7d5;
+            padding: 15px;
+            color: white;
+            text-align: center;
+        }
+
+        /* 圖片容器的樣式 */
+        .gallery-container {
+            display: flex; /* 使用 Flexbox */
+            flex-wrap: wrap; /* 允許圖片換行 */
+            gap: 10px; /* 圖片之間的間距 */
+            justify-content: center; /* 圖片在容器中居中對齊 */
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .gallery-container img {
+            /* 讓圖片具有響應式設計，最大寬度 100% */
+            max-width: 100%; 
+            height: auto; 
+            border: 2px solid #ddd;
+            padding: 5px;
+            background-color: #fff;
+            /* 定義一個基礎寬度，讓較小的圖片可以並排 */
+            flex-basis: 300px; 
+            object-fit: cover; /* 確保圖片填滿空間且不變形 */
+        }
+        /* CSS 樣式結束 */
+    </style>
+</head>
+
+<body style="background-color: aliceblue;">
+
+<!--標題-->
+<h1 style="font-size: 60px; color:#305792; text-align: center;">Contact</h1>
+
+<!--連結頁面-->
+
+<div style="text-align: center; ">
+    <a href="index.html" style="color: #073436; font-size: 18px; letter-spacing: 1px;">&nbsp首頁&nbsp</a>
+    <a href="about.html" style="color: #073436; font-size: 18px; letter-spacing: 1px;">&nbsp關於&nbsp</a>
+    <a href="Illustration.html" style="color: #073436; font-size: 18px; letter-spacing: 1px;">&nbsp插畫作品&nbsp</a>
+    <a href="video.html" style="color: #073436; font-size: 18px; letter-spacing: 1px;">&nbsp影片作品&nbsp</a>
+    <a href="contact.html" style="color: #2974a2; font-size: 18px; letter-spacing: 1px;">&nbsp聯絡方式&nbsp</a>
+</div>
+<hr>
+<!--橫幅-->
+
+<style>
+/* 橫幅 */
+.parent {
+    position: relative;
+    width: 100%;
+    height: 560px;
+    border: 2px solid #ffffff;
+    background-image: url('98912495_p0_master1200.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 水平置中 */
+    align-items: center;     /* 垂直置中 */
+}
+
+/* 社群 icon 容器 */
+.icon-row {
+    display: flex;
+    gap: 34px;
+    margin-bottom: 30px;
+}
+.icon-link {
+    display: flex;
+    flex-direction: column; /* 垂直排列 icon 與文字 */
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #7995b4; /* 文字顏色 */
+    font-weight: bold;
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+/* icon 懸浮效果 */
+.icon-row a img {
+    width: 70px;
+    height: 70px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px; /* 可選，圓角 */
+     margin-bottom: 8px;
+}
+
+.icon-row a img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+
+</style>
+
+<div class="parent" style="background-color: rgba(255, 255, 255, 0.6);">
+    <!-- icon row -->
+    <div class="icon-row">
+        <a href="https://www.facebook.com/share/1A9tyFSadd/" target="_blank">
+            <img src="facebook-brands-solid-full.svg" alt="Facebook">
+            <span class="icon-link">Facebook</span>  <!-- 這裡就是文字 -->
+        </a>
+        <a href="https://x.com/NARUru_404" target="_blank">
+            <img src="twitter-brands-solid-full.svg" alt="X (Twitter)">
+        <span class="icon-link">X</span>  <!-- 這裡就是文字 -->
+        </a>
+        <a href="https://www.pixiv.net/users/81401898" target="_blank">
+            <img src="pixiv-brands-solid-full.svg" alt="Pixiv">
+         <span class="icon-link">Pixiv</span>  <!-- 這裡就是文字 -->
+        <a href="https://www.youtube.com/@naru7028" target="_blank">
+            <img src="youtube-brands-solid-full.svg" alt="youtube">
+        <span class="icon-link">YouTube</span>  <!-- 這裡就是文字 -->
+        </a>
+    </div>
+</div>
+
+
+<br>
+
+
+
+</body>
+
+</html>

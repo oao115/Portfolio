@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Illustration</title>
+    <!--CSS--><!--超連結取消底線-->
+    <style>
+        
+    /* 全局樣式，設置您想要的背景圖片和 70% 透明度的覆蓋層 */
+    body {
+        /* 將您想要的背景圖片 URL 放在這裡 */
+        background-image: url('202412222.png'); 
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        /* 設置定位基準點 */
+        position: relative; 
+        min-height: 100vh; /* 確保背景覆蓋整個視窗高度 */
+        margin: 0; /* 移除 body 預設邊距 */
+        padding: 0; 
+        font-family: sans-serif;
+        background-color: #d6ccc2; /* 當圖片載入失敗時的備用背景色 */
+    }
+
+    /* 創建一個半透明的覆蓋層 */
+    body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 50;
+        /* 設置半透明顏色：白色 with 70% opacity (0.7) */
+        background-color: rgba(255, 255, 255, 0.2); 
+        /* 將這個覆蓋層放在內容下方 */
+        z-index: -1; 
+    }
+        
+    /* 確保所有內容（如標題、連結、圖片）層級較高，顯示在半透明層上方 */
+    h1, h2, div, a, p, marquee, .gallery-container {
+        position: relative;
+        z-index: 1;
+    }
+
+
+    h {color:#526347}
+    a{text-decoration:none}
+    a:hover{text-decoration:none}
+    
+    /* 移除您原來的 .background-container 樣式，因為已經用 body::before 取代 */
+    /* 您原有的其他樣式... */
+
+
+/* 橫幅樣式 */
+.parent {
+  position: relative;
+  width: 100%;
+  height: 460px;
+  margin-bottom: 80px;
+  border: 2px solid rgb(255, 255, 255);
+  overflow: hidden; /* 確保影片不會溢出父元素 */
+}
+
+.banner-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -70%);
+  z-index: -1; /* 放到文字後面 */
+  object-fit: cover; /* 保持比例並覆蓋整個容器 */
+}
+
+.absolute-box {
+  background-color: rgba(6, 20, 48, 0.8); /* 使用 rgba 設定透明度 */
+  position: absolute;
+  top: 100%; 
+  left: 50%; 
+  transform: translate(-50%, -70%); 
+  width: 550px;
+  height: 420px;
+  padding: 10px;
+  border:2px solid rgb(255, 255, 255)
+}
+          
+        /* 圖片容器的樣式 */
+
+
+
+
+        
+        h2 {
+            background: #9cb7d5;
+            padding: 15px;
+            color: white;
+            text-align: center;
+        }
+
+
+
+        .close-btn:hover,
+        .close-btn:focus {
+          color: #bbb;
+          text-decoration: none;
+          cursor: pointer;
+        }
+  
+
+    </style>
+</head>
+
+<body>
+<!--標題-->
+<h1 style="font-size: 60px; color:#305792; text-align: center;">Work</h1>
+<!--連結頁面-->
+<div style="text-align: center; ">
+    <a href="index.html" style="color: #073436; font-size: 18px; letter-spacing: 1px;">&nbsp首頁&nbsp</a>
+    <a href="about.html" style="color: #073436; font-size: 18px; letter-spacing: 1px;">&nbsp關於&nbsp</a>
+    <a href="Illustration.html" style="color: #073436; font-size: 18px; letter-spacing: 1px;">&nbsp插畫作品&nbsp</a>
+    <a href="video.html" style="color: #2974a2; font-size: 18px; letter-spacing: 1px;">&nbsp影片作品&nbsp</a>
+    <a href="contact.html" style="color: #073436; font-size: 18px; letter-spacing: 1px;">&nbsp聯絡方式&nbsp</a>
+</div>
+<hr>
+
+<!--橫幅-->
+
+<div class="parent">
+  
+  <!--影片背景-->
+  <video autoplay muted loop playsinline class="banner-video">
+    <source src="2024-04-21 20-04-19.mp4" type="video/mp4">
+    您的瀏覽器不支援影片播放。
+  </video>
+  <div class="absolute-box">
+    <!-- 新增文字內容 -->
+     <br><br><br><br><br><br>
+    <p style="color: #ffffff; text-align: center; font-size: 40px; font-weight: bold">Live2D</p><br>
+  </div>
+</div>
+
+
+
+<h2 style="background: rgba(29, 58, 102, 0.9);"> </h2>
+<div style="background-color: rgba(255, 255, 255, 0.8);">
+<center><br><br><br><br>
+  <!--嵌入影片-->
+<iframe  width="660" height="415" src="https://www.youtube.com/embed/2TRFDqo_UVA?si=h7WOjguAu2ANVf1A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
+<p style="color: #1b3149;">▪ Vtuber show reel Vtuber 模型展示</p>
+<br><br><br>
+<iframe width="660" height="415" src="https://www.youtube.com/embed/__9NWgULDf4?si=DgIr-3NIVLf6_5Ah" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowfullscreen></iframe>
+<p style="color: #1b3149;">▪ live2d動態桌布</p>
+<br><br><br>
+</center>
+</div>
+
+
+
+<!--嵌入影片
+<br><br>
+<pre style="background-color: rgba(255, 255, 255, 0.6); border:2px solid rgb(255, 255, 255);">
+<center><br><br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2TRFDqo_UVA?si=h7WOjguAu2ANVf1A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/__9NWgULDf4?si=DgIr-3NIVLf6_5Ah" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</center>
+</pre>-->
+
+</body>
+</html>
